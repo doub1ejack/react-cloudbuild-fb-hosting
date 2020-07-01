@@ -17,7 +17,7 @@ There are a few configuration steps you'll need to take in your Google Cloud Pla
 1. Enable services
 1. Create Firebase build-steps for Cloud Build
 1. Connect github repo to Cloud Build
-1. Configure a Service Account for Cloud Build
+1. Enable Service Account permissions
 1. Create Cloud Build trigger
 1. Manually run the trigger
 
@@ -34,10 +34,10 @@ When I walked through this process, GCP didn't have the Cloud Build build steps 
 
 See: https://github.com/GoogleCloudPlatform/cloud-builders-community
 
-### Configure a Service Account for Cloud Build
+### Enable Service Account permissions
 After creating the initial cloud build config, and building the firebase container, it was also necessary to set up a Service Account to give cloud build the necessary permissions.
 
-[todo: specific instructions (it's pretty intuitive)]
+In Cloud Build, go down to "Settings" in the side nav and enable permissions for Firebase and Cloud Functions. (On a real project you'll likely want to get more granular with permissions, but this is enough to get the build running.)
 
 ### Connect github repo to Cloud Build
 Just go to Cloud Build, click "Triggers" in the side nav and you should see a button to connect a repository. Follow the instructions.
